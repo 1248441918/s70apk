@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.s70pixmap'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.s70pixmap"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+// 这个应用只用 Android 框架自带 API，不依赖 AndroidX / 第三方库，
+// 所以不必下载任何 Maven 依赖，构建很快。
+dependencies {
+}
